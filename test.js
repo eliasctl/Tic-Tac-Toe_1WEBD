@@ -22,3 +22,126 @@ function whosWin(sum) {
     etatJeuRondWin();
   }
 }
+
+function haveWin() {
+  // on regarde les 3 lignes
+  // pour la croix
+  // première ligne
+  if (tabJeu[0][0] + tabJeu[0][1] + tabJeu[0][2] === 3) {
+    weHaveAWiner = true;
+    alert("Les ❌ ont gagné !");
+  } else if (
+    // deuxième ligne
+    tabJeu[1][0] + tabJeu[1][1] + tabJeu[1][2] ===
+    3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ❌ ont gagné !");
+  } else if (
+    // troisième ligne
+    tabJeu[2][0] + tabJeu[2][1] + tabJeu[2][2] ===
+    3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ❌ ont gagné !");
+  }
+  // on regarde les 3 colonnes
+  else if (
+    // première colonne
+    tabJeu[0][0] + tabJeu[1][0] + tabJeu[2][0] ===
+    3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ❌ ont gagné !");
+  } else if (
+    // deuxième colonne
+    tabJeu[0][1] + tabJeu[1][1] + tabJeu[2][1] ===
+    3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ❌ ont gagné !");
+  } else if (
+    // troisième colonne
+    tabJeu[0][2] + tabJeu[1][2] + tabJeu[2][2] ===
+    3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ❌ ont gagné !");
+  } else if (
+    // première diagonale
+    tabJeu[0][0] + tabJeu[1][1] + tabJeu[2][2] ===
+    3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ❌ ont gagné !");
+  } else if (
+    // deuxième diagonale
+    tabJeu[0][2] + tabJeu[1][1] + tabJeu[2][0] ===
+    3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ❌ ont gagné !");
+  }
+
+  // on regarde les 3 lignes
+  // pour la le rond
+  if (
+    // première ligne
+    tabJeu[0][0] + tabJeu[0][1] + tabJeu[0][2] ===
+    -3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ⭕️ ont gagné !");
+  } else if (
+    // deuxième ligne
+    tabJeu[1][0] + tabJeu[1][1] + tabJeu[1][2] ===
+    -3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ⭕️ ont gagné !");
+  } else if (
+    // troisième ligne
+    tabJeu[2][0] + tabJeu[2][1] + tabJeu[2][2] ===
+    -3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ⭕️ ont gagné !");
+  }
+  // on regarde les 3 colonnes
+  else if (
+    // première colonne
+    tabJeu[0][0] + tabJeu[1][0] + tabJeu[2][0] ===
+    -3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ⭕️ ont gagné !");
+  } else if (
+    // deuxième colonne
+    tabJeu[0][1] + tabJeu[1][1] + tabJeu[2][1] ===
+    -3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ⭕️ ont gagné !");
+  } else if (
+    // troisième colonne
+    tabJeu[0][2] + tabJeu[1][2] + tabJeu[2][2] ===
+    -3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ⭕️ ont gagné !");
+  } else if (
+    // première diagonale
+    tabJeu[0][0] + tabJeu[1][1] + tabJeu[2][2] ===
+    -3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ⭕️ ont gagné !");
+  } else if (
+    // deuxième diagonale
+    tabJeu[0][2] + tabJeu[1][1] + tabJeu[2][0] ===
+    -3
+  ) {
+    weHaveAWiner = true;
+    alert("Les ⭕️ ont gagné !");
+  }
+}

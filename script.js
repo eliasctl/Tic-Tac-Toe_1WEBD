@@ -32,8 +32,9 @@ for (let i = 0; i <= 8; i++) {
 
   // on regarde si l'utilisateur clique dessus
   cell[i].addEventListener("click", function () {
+    // on apele la function jouer quand on clique sur une case
     jouer(cell[i], cellId[1], cellId[2]);
-    // console.log(tabJeu);
+    // on apelle la function haveWin pour verifier si un joueur a gagné
     haveWin(etatJeu.cellules);
     instructions.textContent = `Au tour du joueur : ${etatJeu.joueur}`;
   });
@@ -63,10 +64,10 @@ function haveWin(tabJeu) {
     whosWin(tabJeu[i][0] + tabJeu[i][1] + tabJeu[i][2]);
     // les 3 colones
     whosWin(tabJeu[0][i] + tabJeu[1][i] + tabJeu[2][i]);
-    // les 2 diagonale
-    whosWin(tabJeu[0][0] + tabJeu[1][1] + tabJeu[2][2]);
-    whosWin(tabJeu[0][2] + tabJeu[1][1] + tabJeu[2][0]);
   }
+  // les 2 diagonale
+  whosWin(tabJeu[0][0] + tabJeu[1][1] + tabJeu[2][2]);
+  whosWin(tabJeu[0][2] + tabJeu[1][1] + tabJeu[2][0]);
 }
 
 function whosWin(sum) {

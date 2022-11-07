@@ -3,6 +3,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  background-color: black;
 }
 
 .board {
@@ -13,7 +14,7 @@ body {
 .board td {
   height: 100px;
   width: 100px;
-  border: 2px solid #00000088;
+  border: 2px solid white;
   cursor: pointer;
   font-size: 3rem;
 }
@@ -36,4 +37,10 @@ body {
 
 .board tr td:last-child {
   border-right: none;
+}
+
+h1,
+h2,
+p {
+  color: white;
 }
