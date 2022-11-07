@@ -33,7 +33,7 @@ for (let i = 0; i <= 8; i++) {
   // on regarde si l'utilisateur clique dessus
   cell[i].addEventListener("click", function () {
     jouer(cell[i], cellId[1], cellId[2]);
-    // console.log(etatJeu.cellules);
+    // console.log(tabJeu);
     haveWin(etatJeu.cellules);
     instructions.textContent = `Au tour du joueur : ${etatJeu.joueur}`;
   });
@@ -56,129 +56,26 @@ function jouer(cell, index1, index2) {
   }
 }
 
-function haveWin() {
-  // on regarde les 3 lignes
-  // pour la croix
-  if (
-    // première ligne
-    tabJeu[0][0] + etatJeu.cellules[0][1] + etatJeu.cellules[0][2] ===
-    3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ❌ ont gagné !");
-  } else if (
-    // deuxième ligne
-    etatJeu.cellules[1][0] + etatJeu.cellules[1][1] + etatJeu.cellules[1][2] ===
-    3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ❌ ont gagné !");
-  } else if (
-    // troisième ligne
-    etatJeu.cellules[2][0] + etatJeu.cellules[2][1] + etatJeu.cellules[2][2] ===
-    3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ❌ ont gagné !");
+function haveWin(tabJeu) {
+  // debut
+  for (let i = 0; i <= 2; i++) {
+    // les 3 lignes
+    whosWin(tabJeu[i][0] + tabJeu[i][1] + tabJeu[i][2]);
+    // les 3 colones
+    whosWin(tabJeu[0][i] + tabJeu[1][i] + tabJeu[2][i]);
+    // les 2 diagonale
+    whosWin(tabJeu[0][0] + tabJeu[1][1] + tabJeu[2][2]);
+    whosWin(tabJeu[0][2] + tabJeu[1][1] + tabJeu[2][0]);
   }
-  // on regarde les 3 colonnes
-  else if (
-    // première colonne
-    etatJeu.cellules[0][0] + etatJeu.cellules[1][0] + etatJeu.cellules[2][0] ===
-    3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ❌ ont gagné !");
-  } else if (
-    // deuxième colonne
-    etatJeu.cellules[0][1] + etatJeu.cellules[1][1] + etatJeu.cellules[2][1] ===
-    3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ❌ ont gagné !");
-  } else if (
-    // troisième colonne
-    etatJeu.cellules[0][2] + etatJeu.cellules[1][2] + etatJeu.cellules[2][2] ===
-    3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ❌ ont gagné !");
-  } else if (
-    // première diagonale
-    etatJeu.cellules[0][0] + etatJeu.cellules[1][1] + etatJeu.cellules[2][2] ===
-    3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ❌ ont gagné !");
-  } else if (
-    // deuxième diagonale
-    etatJeu.cellules[0][2] + etatJeu.cellules[1][1] + etatJeu.cellules[2][0] ===
-    3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ❌ ont gagné !");
-  }
+}
 
-  // on regarde les 3 lignes
-  // pour la le rond
-  if (
-    // première ligne
-    etatJeu.cellules[0][0] + etatJeu.cellules[0][1] + etatJeu.cellules[0][2] ===
-    -3
-  ) {
+function whosWin(sum) {
+  if (sum === 3) {
     weHaveAWiner = true;
-    alert("Les ⭕️ ont gagné !");
-  } else if (
-    // deuxième ligne
-    etatJeu.cellules[1][0] + etatJeu.cellules[1][1] + etatJeu.cellules[1][2] ===
-    -3
-  ) {
+    etatJeuCroixWin();
+  } else if (sum === -3) {
     weHaveAWiner = true;
-    alert("Les ⭕️ ont gagné !");
-  } else if (
-    // troisième ligne
-    etatJeu.cellules[2][0] + etatJeu.cellules[2][1] + etatJeu.cellules[2][2] ===
-    -3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ⭕️ ont gagné !");
-  }
-  // on regarde les 3 colonnes
-  else if (
-    // première colonne
-    etatJeu.cellules[0][0] + etatJeu.cellules[1][0] + etatJeu.cellules[2][0] ===
-    -3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ⭕️ ont gagné !");
-  } else if (
-    // deuxième colonne
-    etatJeu.cellules[0][1] + etatJeu.cellules[1][1] + etatJeu.cellules[2][1] ===
-    -3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ⭕️ ont gagné !");
-  } else if (
-    // troisième colonne
-    etatJeu.cellules[0][2] + etatJeu.cellules[1][2] + etatJeu.cellules[2][2] ===
-    -3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ⭕️ ont gagné !");
-  } else if (
-    // première diagonale
-    etatJeu.cellules[0][0] + etatJeu.cellules[1][1] + etatJeu.cellules[2][2] ===
-    -3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ⭕️ ont gagné !");
-  } else if (
-    // deuxième diagonale
-    etatJeu.cellules[0][2] + etatJeu.cellules[1][1] + etatJeu.cellules[2][0] ===
-    -3
-  ) {
-    weHaveAWiner = true;
-    alert("Les ⭕️ ont gagné !");
+    etatJeuRondWin();
   }
 }
 
