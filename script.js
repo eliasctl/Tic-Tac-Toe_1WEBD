@@ -55,7 +55,7 @@ function jouer(cell, index1, index2) {
   }
 }
 
-function haveWin(tabJeu) {
+function haveWin() {
   // variables
   let sum = 0;
 

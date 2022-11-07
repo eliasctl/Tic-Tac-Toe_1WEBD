@@ -3,7 +3,7 @@ function haveWin(tabJeu) {
   // pour la croix
   if (
     // première ligne
-    etatJeu.cellules[0][0] + etatJeu.cellules[0][1] + etatJeu.cellules[0][2] ===
+    tabJeu[0][0] + etatJeu.cellules[0][1] + etatJeu.cellules[0][2] ===
     3
   ) {
     weHaveAWiner = true;
