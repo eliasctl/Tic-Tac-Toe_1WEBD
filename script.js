@@ -62,11 +62,14 @@ function haveWin(tabJeu) {
   // debut
   for (let i = 0; i <= 2; i++) {
     for (let j = 0; j <= 2; j++) {
-      sum = sum + tabJeu.cellules[i][j];
-      if (sum === 3) {
-        weHaveAWiner = true;
-        alert("Les ❌ ont gagné !");
-      }
+      sum = sum + etatJeu.cellules[2][0];
+    }
+    if (sum === 3) {
+      weHaveAWiner = true;
+      alert("Les ❌ ont gagné !");
+    } else if (sum === -3) {
+      weHaveAWiner = true;
+      alert("Les ⭕️ ont gagné !");
     }
   }
 }
