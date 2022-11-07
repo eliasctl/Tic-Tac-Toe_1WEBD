@@ -1,0 +1,39 @@
+body {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.board {
+  border-collapse: collapse;
+  margin: 3rem auto;
+}
+
+.board td {
+  height: 100px;
+  width: 100px;
+  border: 2px solid #00000088;
+  cursor: pointer;
+  font-size: 3rem;
+}
+
+.board td.disabled {
+  cursor: not-allowed;
+}
+
+.board tr:first-child td {
+  border-top: none;
+}
+
+.board tr:last-child td {
+  border-bottom: none;
+}
+
+.board tr td:first-child {
+  border-left: none;
+}
+
+.board tr td:last-child {
+  border-right: none;
+}
