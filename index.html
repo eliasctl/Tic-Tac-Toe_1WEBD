@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
     <h1>Tic Tac Toe</h1>
     <main>
-      <h2 id="etat">Le Jeu est Lancé 🕹️</h2>
-      <p id="instruction">Au tour du joueur : ❌</p>
-      <table class="board">
-        <tr>
-          <td id="cell-0-0" class="cellule"></td>
-          <td id="cell-0-1" class="cellule"></td>
-          <td id="cell-0-2" class="cellule"></td>
-        </tr>
-        <tr>
-          <td id="cell-1-0" class="cellule"></td>
-          <td id="cell-1-1" class="cellule"></td>
-          <td id="cell-1-2" class="cellule"></td>
-        </tr>
-        <tr>
-          <td id="cell-2-0" class="cellule"></td>
-          <td id="cell-2-1" class="cellule"></td>
-          <td id="cell-2-2" class="cellule"></td>
-        </tr>
-      </table>
-      <input
-        type="button"
-        onclick="document.location.reload(false)"
-        value="Effacer"
-      />
+        <p id="instruction">Au tour du joueur : ❌</p>
+        <table class="board">
+            <tr>
+                <td id="cell-0-0" class="cellule"></td>
+                <td id="cell-0-1" class="cellule"></td>
+                <td id="cell-0-2" class="cellule"></td>
+            </tr>
+            <tr>
+                <td id="cell-1-0" class="cellule"></td>
+                <td id="cell-1-1" class="cellule"></td>
+                <td id="cell-1-2" class="cellule"></td>
+            </tr>
+            <tr>
+                <td id="cell-2-0" class="cellule"></td>
+                <td id="cell-2-1" class="cellule"></td>
+                <td id="cell-2-2" class="cellule"></td>
+            </tr>
+        </table>
+        <input type="button" onclick='document.location.reload(false)' value="Effacer" />
     </main>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

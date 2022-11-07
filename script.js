@@ -20,9 +20,6 @@ let cells = [];
 // variable pour desactiver la saisie
 let weHaveAWiner = false;
 
-// variable conteur de tour au cas ou il y ait une égalité
-let conteurTour = 0;
-
 // pour chaque cellule
 
 for (let i = 0; i <= 8; i++) {
@@ -46,13 +43,15 @@ function jouer(cell, index1, index2) {
       cell.textContent = "❌";
       etatJeu.cellules[index1][index2] = 1;
       etatJeu.joueur = "⭕️";
-      calculTour();
     } else {
       cell.textContent = "⭕️";
       etatJeu.cellules[index1][index2] = -1;
       etatJeu.joueur = "❌";
-      calculTour();
     }
+  } else {
+    alert("❌ vous le pouvez pas jouer dans cette case ❌");
+    // cell.textContent = "";
+    // etatJeu.cellules[index1][index2] = null;
   }
 }
 
@@ -67,28 +66,10 @@ function haveWin() {
     }
     if (sum === 3) {
       weHaveAWiner = true;
-      etatJeuCroixWin();
+      alert("Les ❌ ont gagné !");
     } else if (sum === -3) {
       weHaveAWiner = true;
-      etatJeuRondWin();
+      alert("Les ⭕️ ont gagné !");
     }
-  }
-}
-
-function etatJeuRondWin() {
-  document.getElementById("etat").textContent =
-    "Les ⭕️ ont gagné ! Pour rejouer cliquez sur “Effacer“ en bas !";
-}
-
-function etatJeuCroixWin() {
-  document.getElementById("etat").textContent =
-    "Les ❌ ont gagné ! Pour rejouer cliquez sur “Effacer“ en bas !";
-}
-
-function calculTour() {
-  conteurTour++;
-  if (conteurTour === 9) {
-    document.getElementById("etat").textContent =
-      "Aucun jeur n'as gagner, c'est une égalité ! 🙈 Pour rejouer cliquez sur “Effacer“ en bas !";
   }
 }
