@@ -20,11 +20,13 @@ let cells = [];
 // variable pour desactiver la saisie
 let weHaveAWiner = false;
 
+const bot = document.getElementById("Play");
+bot.addEventListener("click", playRandom(etatJeu.cellules, cells));
+
 // variable conteur de tour au cas ou il y ait une égalité
 let conteurTour = 0;
 
 // pour chaque cellule
-
 for (let i = 0; i <= 8; i++) {
   let cellId = [];
   // on stoque dans cellId
@@ -68,6 +70,28 @@ function haveWin(tabJeu) {
   // les 2 diagonale
   whosWin(tabJeu[0][0] + tabJeu[1][1] + tabJeu[2][2]);
   whosWin(tabJeu[0][2] + tabJeu[1][1] + tabJeu[2][0]);
+}
+
+function playRandom(grilleDeJeu, cell) {
+  console.log("je suis une fleur");
+  // on regarde les cases dans lesquels on peux jouer
+  let colone = getRandom();
+  let ligne = getRandom();
+  let count = 0;
+
+  while (count === 0) {
+    if (grilleDeJeu[colone][ligne] === null) {
+      jouer(cell, ligne, colone);
+      count = 1;
+    } else {
+      let colone = getRandom();
+      let ligne = getRandom();
+    }
+  }
+}
+
+function getRandom() {
+  return Math.floor(Math.random() * 3);
 }
 
 function whosWin(sum) {
